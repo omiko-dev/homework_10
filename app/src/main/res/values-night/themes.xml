@@ -4,6 +4,8 @@
         <item name="drawableTint">@color/white</item>
         <item name="background">@drawable/ic_edit_btn_night</item>
         <item name="color">@color/white</item>
+        <item name="trackTint">@color/dark_gray</item>
+        <item name="android:drawableTint">@color/red</item>
     </style>
 
 </resources>
