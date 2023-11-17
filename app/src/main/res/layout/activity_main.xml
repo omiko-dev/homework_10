@@ -5,14 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="15dp"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="15dp"
         android:textSize="20sp"
+        android:textColor="?attr/color"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,21 +26,78 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="15dp"
         android:textSize="20sp"
+        android:textColor="?attr/color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:drawableStartCompat="@drawable/ic_nav" />
 
-
-    <androidx.appcompat.widget.AppCompatImageView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imageBox"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="165dp"
-        android:layout_width="150dp"
-        android:background="@drawable/profile_image_bg"
-        android:src="@mipmap/ic_launcher_round"
-        android:layout_height="150dp"/>
+        app:layout_constraintTop_toTopOf="@+id/title"
+        android:layout_marginTop="65dp"
+        app:cardCornerRadius="100dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bEdit"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="10dp"
+        android:background="?attr/background"
+        app:layout_constraintBottom_toBottomOf="@+id/imageBox"
+        app:layout_constraintEnd_toEndOf="@+id/imageBox"
+        app:layout_goneMarginRight="10dp"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/andrew_ainsley"
+        android:textSize="20sp"
+        android:textColor="?attr/color"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageBox" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mobNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_1_111_467_378_399"
+        android:textStyle="bold"
+        android:textColor="?attr/color"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fullName" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintTop_toBottomOf="@id/mobNumber"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="25dp"
+        android:background="@color/light_gray"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
