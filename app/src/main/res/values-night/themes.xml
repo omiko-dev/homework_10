@@ -1,9 +1,10 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.Homework_10" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="drawableTint">@color/white</item>
         <item name="background">@drawable/ic_edit_btn_night</item>
         <item name="color">@color/white</item>
+        <item name="android:textColor">@color/white</item>
         <item name="trackTint">@color/dark_gray</item>
         <item name="android:drawableTint">@color/red</item>
     </style>

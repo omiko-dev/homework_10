@@ -47,7 +47,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background"/>
+            android:src="@drawable/ic_launcher_background"
+            android:importantForAccessibility="no" />
 
     </androidx.cardview.widget.CardView>
 
@@ -90,6 +91,7 @@
 
 
     <View
+        android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         app:layout_constraintTop_toBottomOf="@id/mobNumber"
@@ -97,6 +99,30 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="25dp"
         android:background="@color/light_gray"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        app:layout_constraintTop_toBottomOf="@+id/line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:clipToPadding="false"
+        android:paddingTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+
+<!--    android:id="@+id/recycler"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/line"-->
+<!--    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--    app:layout_constraintRight_toRightOf="parent"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    android:layout_marginTop="10dp"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="0dp"-->
+<!--    app:layout_constraintVertical_bias="0"-->
 
 
 
