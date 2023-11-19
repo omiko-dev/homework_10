@@ -26,6 +26,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="3dp"
         android:background="@drawable/ic_next_arrow"
-        android:backgroundTint="?attr/color"/>
+        android:backgroundTint="?attr/color"
+        android:importantForAccessibility="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

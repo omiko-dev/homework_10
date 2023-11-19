@@ -22,24 +22,10 @@ class SettingItemAdapter :
         }
     }){
 
-    private val testList: MutableList<SettingItem> = mutableListOf(
-        SettingItem(0, R.drawable.ic_user, "Edit Profile", SettingItemType.Normal),
-        SettingItem(1, R.drawable.ic_address, "Address", SettingItemType.Normal),
-        SettingItem(2, R.drawable.ic_notification, "Notification", SettingItemType.Normal),
-        SettingItem(3, R.drawable.ic_payment, "Payment", SettingItemType.Normal),
-        SettingItem(4, R.drawable.ic_security, "Security", SettingItemType.Normal),
-        SettingItem(5, R.drawable.ic_language, "Language", SettingItemType.WithMessage),
-        SettingItem(6, R.drawable.ic_eye, "Dark Mode", SettingItemType.WithSwitch),
-        SettingItem(7, R.drawable.ic_lock, "Privacy Policy", SettingItemType.Normal),
-        SettingItem(8, R.drawable.ic_help, "Help Center", SettingItemType.Normal),
-        SettingItem(9, R.drawable.ic_people, "Invite Friend", SettingItemType.Normal),
-        SettingItem(10, R.drawable.ic_log_out, "Logout", SettingItemType.RedItem)
-    )
-
     inner class NormalSettingItemViewHolder(private val binding: NormalSettingItemBinding):
         RecyclerView.ViewHolder(binding.root){
         fun bind(){
-            val item = testList[adapterPosition]
+            val item = currentList[adapterPosition]
             binding.apply {
                 tvIconAndTitle.text = item.title
                 tvIconAndTitle.setCompoundDrawablesWithIntrinsicBounds(
@@ -55,7 +41,7 @@ class SettingItemAdapter :
     inner class MessageSettingItemViewHolder(private val binding: MessageSettingItemBinding):
         RecyclerView.ViewHolder(binding.root){
         fun bind(){
-            val item = testList[adapterPosition]
+            val item = currentList[adapterPosition]
             binding.apply {
                 tvIconAndTitle.text = item.title
                 tvIconAndTitle.setCompoundDrawablesWithIntrinsicBounds(
@@ -71,7 +57,7 @@ class SettingItemAdapter :
     inner class SwitchSettingItemViewHolder(private val binding: SwitchSettingItemBinding):
         RecyclerView.ViewHolder(binding.root){
         fun bind(){
-            val item = testList[adapterPosition]
+            val item = currentList[adapterPosition]
             binding.apply {
                 tvIconAndTitle.text = item.title
                 tvIconAndTitle.setCompoundDrawablesWithIntrinsicBounds(
@@ -87,7 +73,7 @@ class SettingItemAdapter :
     inner class RedSettingItemViewHolder(private val binding: RedSettingItemBinding):
         RecyclerView.ViewHolder(binding.root){
         fun bind(){
-            val item = testList[adapterPosition]
+            val item = currentList[adapterPosition]
             binding.apply {
                 tvTitle.text = item.title
                 ivIcon.setImageResource(item.icon)
@@ -96,7 +82,7 @@ class SettingItemAdapter :
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when (testList[position].settingItemType) {
+        return when (currentList[position].settingItemType) {
             SettingItemType.Normal -> 0
             SettingItemType.WithMessage -> 1
             SettingItemType.WithSwitch -> 2
@@ -156,9 +142,8 @@ class SettingItemAdapter :
         }
     }
 
-    override fun getItemCount(): Int {
-        return testList.size
+    fun setList(items: MutableList<SettingItem>){
+        submitList(items)
     }
-
 
 }
